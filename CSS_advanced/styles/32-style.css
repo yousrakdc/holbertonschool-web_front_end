@@ -67,6 +67,7 @@
     --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
+/* Global Styles */
 *,
 *::before,
 *::after {
@@ -108,6 +109,7 @@ a:active {
     background-color: var(--color-light-grey);
 }
 
+/* Button Styles */
 .button {
     display: var(--button-display);
     padding: var(--button-padding);
@@ -115,15 +117,17 @@ a:active {
     font-size: var(--button-font-size);
     color: var(--button-color);
     text-decoration: var(--button-text-decoration);
-    transition: var(--transition-duration) var(--transition-cubic-bezier);
+    transition: color var(--transition-duration) var(--transition-cubic-bezier),
+                background-color var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .button:hover {
     color: var(--button-hover-color);
+    text-decoration: var(--button-hover-text-decoration);
     background-color: var(--button-hover-background);
-    transition-property: color, background-color;
 }
 
+/* Header Styles */
 .header {
     padding: var(--header-padding);
 }
@@ -139,12 +143,14 @@ a:active {
     left: var(--header-logo-link-left);
 }
 
+/* Container Styles */
 .container {
     width: 960px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Navigation Styles */
 .navbar-menu {
     float: right;
 }
@@ -169,7 +175,6 @@ a:active {
     display: block;
     padding: 0.5rem 1rem;
     position: relative;
-    transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .nav .nav-link::before {
@@ -179,8 +184,8 @@ a:active {
     left: 0;
     background-color: var(--color-white);
     width: 0;
-    height: 0.2rem; /* 20% of the root element value (1rem) */
-    transition: var(--transition-duration) var(--transition-cubic-bezier);
+    height: 0.2rem;
+    transition: width var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .nav .nav-link:hover::before,
@@ -189,10 +194,7 @@ a:active {
     width: 100%;
 }
 
-.nav .nav-link:hover {
-    color: var(--nav-item-link-hover);
-}
-
+/* Section Styles */
 .section {
     padding: var(--section-padding);
 }
@@ -227,6 +229,7 @@ a:active {
     margin: var(--section-tagline-margin);
 }
 
+/* Utility Classes */
 .row::after {
     content: "";
     display: table;
@@ -252,6 +255,7 @@ ul.row {
     width: 50%;
 }
 
+/* Card Styles */
 .card-category {
     color: var(--color-primary);
     font-size: var(--font-size-medium);
@@ -265,6 +269,8 @@ ul.row {
     display: block;
     padding: 2rem;
     background-color: var(--color-light-grey);
+    transition: color var(--transition-duration) var(--transition-cubic-bezier),
+                background-color var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .card-services a:hover {
@@ -279,26 +285,18 @@ ul.row {
 
 .card-testimonial .card-avatar {
     border-radius: 50%;
-    width: 10rem; /* 10 times the root element (1rem) */
-    height: 10rem; /* 10 times the root element (1rem) */
+    width: 10rem;
+    height: 10rem;
 }
 
-.card-testimonial .card-quote {
-    position: relative;
-}
-
-.card-testimonial .card-quote::before {
-    content: "\201C";
-    position: absolute;
-    top: -4.5rem;
-    left: -1rem;
-    color: #efeded;
-    font-size: 10rem;
-    z-index: -1;
+.card-testimonial .card-quote cite {
+    display: block;
+    padding-top: 1rem;
+    color: var(--color-primary);
 }
 
 .section-hero {
-    background-size: 90rem auto; /* 2-value syntax for width and height */
+    background-size: 90rem auto;
 }
 
 .section-hero .section-title {
@@ -345,18 +343,18 @@ ul.row {
     --button-color: var(--color-white);
 }
 
-.card-work {
+/* Card Work Styles */
+.card-work .card-outer {
     position: relative;
     overflow: hidden;
+}
+
+.card-work .card-image img {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
     transition: transform var(--transition-duration) var(--transition-cubic-bezier);
-}
-
-.card-work:hover .card-image {
-    transform: scale(1.2);
-}
-
-.card-work:hover .card-outer {
-    transform: scale(0.95);
 }
 
 .card-work .card-inner {
@@ -368,7 +366,38 @@ ul.row {
     transition: transform var(--transition-duration) var(--transition-cubic-bezier);
 }
 
-.card-work:hover .card-inner {
+.card-work:hover .card-image {
+    transform: scale(1.2);
+}
+
+.card-work:hover .card-outer {
+    transform: scale(0.95);
+}
+
+.card-work .card-title {
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    height: 100%;
+    position: relative;
+}
+
+.card-work .card-title a {
+    display: block;
+    text-decoration: none;
+    padding-top: 45%;
+}
+
+.card-work .card-title a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.card-work:hover .card-title {
     opacity: 1;
 }
 
