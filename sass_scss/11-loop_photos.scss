@@ -1,7 +1,7 @@
-@import '11-photos';
+@import '11-names';
 
 @each $name in $list-names {
-    .#{$name} {
-      background-image: url('/photos/#{$name}.jpg');
-    }
+  .photo-#{$name} {
+    background: url("photos/#{$name}.jpg") no-repeat;
   }
+}
