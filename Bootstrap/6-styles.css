@@ -1,0 +1,64 @@
+/* Custom styles for Bootstrap pricing page */
+
+/* Primary button styles */
+.btn-primary {
+    background-color: #E0003C;
+    border-color: #E0003C;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #BC1340;
+    border-color: #BC1340;
+}
+
+/* Outline primary button styles */
+.btn-outline-primary {
+    color: #E0003C;
+    border-color: #E0003C;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    color: #fff;
+    background-color: #E0003C;
+    border-color: #E0003C;
+}
+
+/* Link styles */
+a {
+    color: #E0003C;
+}
+
+a:hover,
+a:focus {
+    color: #E0003C;
+}
+
+/* Card styles */
+.card {
+    border-color: #E0003C;
+    border-radius: 1rem;
+}
+
+.card-header,
+.card-footer {
+    border-color: #E0003C;
+}
+
+.card-header {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.card-footer {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+/* Text muted color */
+.text-muted {
+    color: #8C8C8C !important;
+}
