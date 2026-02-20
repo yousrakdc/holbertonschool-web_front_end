@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Cookies</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: white;
+            margin: 40px;
+            color: black;
+        }
+        
+        .login-section {
+            margin-bottom: 60px;
+        }
+        
+        .login-section h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: black;
+        }
+        
+        .login-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .login-form input {
+            padding: 8px 4px;
+            border: 1px solid #ccc;
+            border-radius: 0px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        
+        .login-form input::placeholder {
+            color: #666;
+        }
+        
+        .login-form button {
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            background-color: white;
+            color: #333;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .cookies-section h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: black;
+        }
+        
+        .cookies-section button {
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            background-color: white;
+            color: #333;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        p {
+            margin-top: 20px;
+            font-family: Georgia, serif;
+            font-size: 18px;
+        }
+    </style>
+    <script src="dist/bundle.js"></script>
+</head>
+<body>
+    <div class="login-section">
+        <h2>Login to the website</h2>
+        <div class="login-form">
+            <input type="text" id="firstname" placeholder="Firstname">
+            <input type="text" id="email" placeholder="Email">
+            <button type="button" onclick="setCookies()">Log me in</button>
+        </div>
+    </div>
+    
+    <div class="cookies-section">
+        <h2>Cookies</h2>
+        <button type="button" onclick="showCookies()">Show the cookies</button>
+    </div>
+</body>
+</html>
